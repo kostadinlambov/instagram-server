@@ -2,7 +2,7 @@ package com.instagram.servicesImpl;
 
 import com.instagram.repositories.UserRepository;
 import com.instagram.services.UserService;
-import com.instagram.validations.serviceValidation.Services.UserValidationService;
+import com.instagram.validations.serviceValidation.services.UserValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

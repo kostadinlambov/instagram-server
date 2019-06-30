@@ -1,7 +1,7 @@
 package com.instagram.validations.serviceValidation.servicesImpl;
 
 import com.instagram.domain.entities.UserRole;
-import com.instagram.validations.serviceValidation.Services.RoleValidationService;
+import com.instagram.validations.serviceValidation.services.RoleValidationService;
 import org.springframework.stereotype.Component;
 
 @Component

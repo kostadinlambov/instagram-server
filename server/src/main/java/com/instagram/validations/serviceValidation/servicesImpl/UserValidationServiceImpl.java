@@ -2,7 +2,7 @@ package com.instagram.validations.serviceValidation.servicesImpl;
 
 
 import com.instagram.domain.entities.User;
-import com.instagram.validations.serviceValidation.Services.UserValidationService;
+import com.instagram.validations.serviceValidation.services.UserValidationService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 

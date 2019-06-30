@@ -3,7 +3,7 @@ package com.instagram.servicesImpl;
 import com.instagram.domain.entities.UserRole;
 import com.instagram.repositories.RoleRepository;
 import com.instagram.services.RoleService;
-import com.instagram.validations.serviceValidation.Services.RoleValidationService;
+import com.instagram.validations.serviceValidation.services.RoleValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

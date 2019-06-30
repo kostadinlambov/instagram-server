@@ -1,4 +1,4 @@
-package com.instagram.validations.serviceValidation.Services;
+package com.instagram.validations.serviceValidation.services;
 
 
 import com.instagram.domain.entities.User;

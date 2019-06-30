@@ -2,7 +2,7 @@ package com.instagram.web.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.instagram.services.UserService;
-import com.instagram.validations.serviceValidation.Services.UserValidationService;
+import com.instagram.validations.serviceValidation.services.UserValidationService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
