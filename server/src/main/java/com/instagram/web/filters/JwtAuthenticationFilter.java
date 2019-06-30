@@ -3,7 +3,9 @@ package com.instagram.web.filters;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.instagram.domain.entities.User;
 import com.instagram.domain.models.bindingModels.user.UserLoginBindingModel;
+import com.instagram.services.LoggerService;
 import com.instagram.services.UserService;
+import com.instagram.utils.responseHandler.exceptions.CustomException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +25,15 @@ import java.util.Date;
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private final AuthenticationManager authenticationManager;
     private final ObjectMapper mapper;
-//    private final LoggerService loggerService;
+    private final LoggerService loggerService;
     private final UserService userService;
 
 
     @Autowired
-    public JwtAuthenticationFilter(AuthenticationManager authenticationManager, ObjectMapper mapper,UserService userService) {
+    public JwtAuthenticationFilter(AuthenticationManager authenticationManager, ObjectMapper mapper, LoggerService loggerService, UserService userService) {
         this.authenticationManager = authenticationManager;
         this.mapper = mapper;
+        this.loggerService = loggerService;
         this.userService = userService;
     }
 
@@ -49,9 +52,8 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             return authenticate;
 
         } catch (IOException | AuthenticationException ex) {
-            ex.printStackTrace();
-//            throw new CustomException(ex.getMessage());
-            throw new IllegalArgumentException(ex.getMessage());
+//            ex.printStackTrace();
+            throw new CustomException(ex.getMessage());
 //            return null;
         }
     }
@@ -88,7 +90,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
         if (request.getMethod().equals("POST") && request.getRequestURI().endsWith("/login")) {
                 String username = user.getUsername();
-//                loggerService.createLog("POST", username, "-", "login");
+                loggerService.createLog("POST", username, "-", "login");
         }
 
         response.addHeader("Authorization", "Bearer " + token);
